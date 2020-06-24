@@ -1,10 +1,10 @@
 from django.db import models
 from datetime import datetime
-
+from company.models import Company
 
 # Create your models here.
 class Client(models.Model):
-    client_number = models.CharField(max_length=8, primary_key=True)
+    client_number = models.CharField(max_length=8,null=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.CharField(max_length=255)
@@ -12,6 +12,7 @@ class Client(models.Model):
     address = models.CharField(max_length=200)
     id_no = models.CharField(max_length=10)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+    company = models.ForeignKey(Company,on_delete=models.DO_NOTHING,blank=True)
 
     def save(self, *args, **kwargs):
         if not self.client_number:

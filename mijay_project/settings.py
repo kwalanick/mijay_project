@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'report_builder',
+    'smart_selects',
+    'users',
     'company',
     'client',
     'driver',
@@ -156,4 +158,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = 'Mijay Travels <kwalaproxy@gmail.com>'
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/dashboard'
+AUTH_USER_MODEL = 'users.CustomUser'# new
+
+USE_DJANGO_JQUERY = True
 

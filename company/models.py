@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class Company(models.Model):
-    company_code = models.CharField(max_length=8,primary_key=True)
+    company_code = models.CharField(max_length=8,null=True)
     name = models.CharField(max_length=200)
     pin_no = models.CharField(max_length=20, blank=True)
     email = models.CharField(max_length=100)
@@ -20,8 +20,8 @@ class Company(models.Model):
         super(Company, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'Company'
-        verbose_name_plural = 'Companies'
+        verbose_name = 'company'
+        verbose_name_plural = 'companies'
 
     def __str__(self):
         return self.name

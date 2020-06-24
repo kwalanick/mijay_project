@@ -14,7 +14,7 @@ class CompanyAdmin(admin.ModelAdmin):
         ('TimeStamps', {'fields': ('created_date',)})
     )
     list_display = ('company_code', 'name', 'email', 'phone', 'address', 'pin_no', 'created_date')
-    search_fields = ('company_code', 'name', 'pin_no')
+    search_fields = ('name',)
     list_display_links = ('company_code', 'name')
     list_per_page = 25
     list_filter = ('created_date',)
